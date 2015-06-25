@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script data-main="../scripts/main" src="scripts/lib/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title></title>
+</head>
+<body data-id="@model.id" data-domain="@model.domain" data-width="@model.width" data-height="@model.height">
+    This is Client with id @model.id
+    <div class="wrapper">
+        <canvas id="canvas" width="@model.width" height="@model.height" class="canvas-main"></canvas>
+    </div>
+</body>
+</html>

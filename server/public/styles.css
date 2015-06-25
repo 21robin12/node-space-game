@@ -1,0 +1,15 @@
+.wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:600px;
+}
+canvas {
+    border: 1px solid;
+}
+.fps {
+    text-align: center;
+}
+
+.canvas-main {
+    background: grey;
+}

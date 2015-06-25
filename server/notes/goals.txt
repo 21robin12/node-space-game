@@ -1,0 +1,17 @@
+﻿
+***TO DO***
+
+Test in live environment
+
+Spaceship health + healthbar
+Collision
+Fix multiple connection issue (old browser window can steal/block connection) -> do this via lobby & signup
+Add game framework: lobby with basic "sign up", limit number of players, "rounds" of a certain time, chat
+Add game objectives (deathmatch?)
+Thrusters animation?
+
+
+***GUIDES AND RESOURCES***
+JS classes: http://robertnyman.com/2008/10/14/javascript-how-to-get-private-privileged-public-and-static-members-properties-and-methods/
+Use underscore prefixing for "private" methods. See here for justification: http://stackoverflow.com/questions/4484424/underscore-prefix-for-property-and-method-names-in-javascript
+Document everything, this should also help to highlight more possible refactorings
