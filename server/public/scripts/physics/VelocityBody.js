@@ -16,12 +16,12 @@
         
         if (this.position.x <= 0) {
             this.position.x = maxX;
-        } else if (this.position.x > maxY) {
+        } else if (this.position.x > maxX) {
             this.position.x = 0;
         }
         
         if (this.position.y <= 0) {
-            this.position.y = maxX;
+            this.position.y = maxY;
         } else if (this.position.y > maxY) {
             this.position.y = 0;
         }
