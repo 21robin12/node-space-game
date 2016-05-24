@@ -1,4 +1,8 @@
-﻿# node-space-game
+# node-space-game
+
+A NodeJS multiplayer browser "game" using WebSockets for bi-directional communication and JavaScript OOP (pre-ES6).
+
+![alt tag](screenshot.png)
 
 No setup required; just pull the repo and you're ready. Required node modules have all been comitted to the repo.
 
