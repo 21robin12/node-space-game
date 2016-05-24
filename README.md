@@ -1,6 +1,6 @@
 ﻿# node-space-game
 
-No setup required; just pull the repo and you're ready. Yes, I committed all my node modules, and what?
+No setup required; just pull the repo and you're ready. Required node modules have all been comitted to the repo.
 
 To run the application, do `node app.js` and visit http://localhost:1337
 
