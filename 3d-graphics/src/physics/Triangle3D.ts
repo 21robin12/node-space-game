@@ -12,10 +12,9 @@ class Triangle3D {
     public project2D() : Triangle2D {
         return new Triangle2D(new Vector2D(this.v1.x, this.v1.y), new Vector2D(this.v2.x, this.v2.y), new Vector2D(this.v3.x, this.v3.y));
     }
-    // TODO reimplement this
-    /*
-    self.getCenter = function() {
-        return new Vector3D((self.v1.x + self.v2.x + self.v3.x) / 3, (self.v1.y + self.v2.y + self.v3.y) / 3, (self.v1.z + self.v2.z + self.v3.z) / 3);
+
+    public getCenter() : Vector3D {
+        return new Vector3D((this.v1.x + this.v2.x + this.v3.x) / 3, (this.v1.y + this.v2.y + this.v3.y) / 3, (this.v1.z + this.v2.z + this.v3.z) / 3);
     };
-    */
+    
 }

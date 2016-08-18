@@ -8,4 +8,8 @@ function init() {
     
     var pyramid = new Pyramid(36);
     pyramid.draw({x: 450, y: 450}, 0, visualizer, "#00FFFF");
+    
+    for(var i = 0; i < pyramid.faces.length; i++) {
+        console.log(pyramid.faces[i].getCenter());
+    }
 }
