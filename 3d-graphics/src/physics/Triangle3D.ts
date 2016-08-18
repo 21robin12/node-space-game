@@ -2,11 +2,13 @@ class Triangle3D {
     public v1: Vector3D;
     public v2: Vector3D;
     public v3: Vector3D;
+    public normalPoint: Vector3D;
     
-    constructor(v1: Vector3D, v2: Vector3D, v3: Vector3D) {
+    constructor(v1: Vector3D, v2: Vector3D, v3: Vector3D, normalPoint: Vector3D) {
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
+        this.normalPoint = normalPoint;
     }
     
     public project2D() : Triangle2D {
