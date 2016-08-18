@@ -19,4 +19,3 @@ gulp.task('default', function () {
     // can pass many tasks here as an array
     return gulp.start(['scripts', 'watch']);
 });
-
