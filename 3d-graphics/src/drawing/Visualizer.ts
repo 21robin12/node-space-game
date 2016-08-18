@@ -5,6 +5,16 @@ class Visualizer {
         this.canvasContext = canvasContext;
     }
 
+    public drawCircle(position: Vector2D, radius: number, color: string) : void {
+        this.canvasContext.beginPath();
+        this.canvasContext.arc(position.x, position.y, radius, 0, 2 * Math.PI, false);
+        this.canvasContext.fillStyle = "yellow";
+        this.canvasContext.fill();
+        this.canvasContext.lineWidth = 1;
+        this.canvasContext.strokeStyle = "black";
+        this.canvasContext.stroke();
+    }
+
     // TODO type this
     public draw (position: any, theta: any, pointsArray: any, color: any) {
         this.canvasContext.beginPath();
