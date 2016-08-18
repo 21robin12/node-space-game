@@ -1,3 +1,5 @@
 *.dat
 *.suo
 *.dat.tmp
+node_modules
+3d-graphics/dist
