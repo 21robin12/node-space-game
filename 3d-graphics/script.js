@@ -31,6 +31,10 @@ function Triangle3D(v1, v2, v3) {
     self.project2D = function() {
         return new Triangle2D(new Vector2D(self.v1.x, self.v1.y), new Vector2D(self.v2.x, self.v2.y), new Vector2D(self.v3.x, self.v3.y));
     };
+    
+    self.getCenter = function() {
+        return new Vector3D((self.v1.x + self.v2.x + self.v3.x) / 3, (self.v1.y + self.v2.y + self.v3.y) / 3, (self.v1.z + self.v2.z + self.v3.z) / 3);
+    };
 }
 
 function Triangle2D(v1, v2, v3) {
@@ -88,6 +92,9 @@ function Pyramid(sf) {
     
     self.draw = function(position, theta, visualizer, color) {
         for(var i = 0; i < self.faces.length; i++) {
+            
+            console.log(self.faces[i].getCenter());
+            
             var triangle2D = self.faces[i].project2D();
             var pointsArray = [triangle2D.v1, triangle2D.v2, triangle2D.v3];
             visualizer.draw(position, theta, pointsArray, color);            
