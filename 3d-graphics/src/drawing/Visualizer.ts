@@ -1,10 +1,10 @@
 class Visualizer {
     public canvasContext: any;
-    
+
     constructor(canvasContext: any) {
         this.canvasContext = canvasContext;
     }
-    
+
     // TODO type this
     public draw (position: any, theta: any, pointsArray: any, color: any) {
         this.canvasContext.beginPath();
