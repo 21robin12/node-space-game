@@ -4,7 +4,7 @@ A NodeJS multiplayer browser "game" using JavaScript OOP (pre-ES6) and WebSocket
 
 ![alt tag](screenshot.png)
 
-Pull the repo and run `npm install` in the `server` directory. To run the application, run `node app.js` and visit http://localhost:1337
+Pull the repo and run `npm install` in the `server` and `3d-graphics` directories. To run the application, run `node app.js` and visit http://localhost:1337
 
  - app.js handles the web server stuff
  - GameServer.js handles the server-side version of the game-state
