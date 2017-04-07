@@ -35,6 +35,9 @@ function (GameServer, socketio, express, path) {
     var gameHeight = 600;
     var gameServer = new GameServer(gameWidth, gameHeight);
     
+    // Start game
+    gameServer.start();
+    
     // Define sockets
     var io = socketio.listen(server);
     io.sockets.on('connection', function (socket) {
@@ -61,9 +64,6 @@ function (GameServer, socketio, express, path) {
         socket.on('KeyHandler key-added', function (data) {
             gameServer.onKeyAdded(data);
         });
-        
-        // Start game
-        gameServer.start();
     });
     
     // Routing
