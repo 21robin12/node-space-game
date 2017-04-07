@@ -3,6 +3,7 @@
 
 Test in live environment
 
+Player IDs must be GUIDs - else players can submit key presses for each other!
 Spaceship health + healthbar
 Collision
 Fix multiple connection issue (old browser window can steal/block connection) -> do this via lobby & signup
