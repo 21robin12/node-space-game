@@ -30,6 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ServerPlayer.js" />
     <Compile Include="public\scripts\drawing\PointArrays.js" />
     <Compile Include="public\scripts\game\Player.js" />
     <Compile Include="public\scripts\helpers\ArrayHelper.js" />

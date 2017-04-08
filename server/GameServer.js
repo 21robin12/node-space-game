@@ -1,5 +1,5 @@
-﻿define(["physics/SpaceShip", "events", "game/GameState", "helpers/ArrayHelper", "game/PlayerDataConverter"], 
-function (SpaceShip, events, GameState, ArrayHelper, PlayerDataConverter) {
+﻿define(["physics/SpaceShip", "events", "game/GameState", "helpers/ArrayHelper", "game/PlayerDataConverter", "ServerPlayer"], 
+function (SpaceShip, events, GameState, ArrayHelper, PlayerDataConverter, ServerPlayer) {
 
     function GameServer(width, height) {        
         this.players = [];
@@ -36,7 +36,7 @@ function (SpaceShip, events, GameState, ArrayHelper, PlayerDataConverter) {
     
     GameServer.prototype.addNewPlayer = function () {
         var newPlayerId = this._getNextId();
-        this.players.push({ playerId: newPlayerId, lastUp: new Date().getTime() });
+        this.players.push(new ServerPlayer({ playerId: newPlayerId }));
         this.gameState.addNewPlayer(newPlayerId);
         
         return newPlayerId;
