@@ -52,23 +52,18 @@ function (io, KeyHandler, Visualizer, SpaceShip, GameState, PlayerDataConverter,
     Client.prototype._drawEverything = function () {
         this.canvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-        var currentPlayerShip = null;
+        var currentPlayer = null;
         for (var i = 0; i < this.gameState.players.length; i++) {
             var player = this.gameState.players[i];
-            var ship = player.spaceShip;
             if (player.playerId === this.id) {
-                currentPlayerShip = ship;
+                currentPlayer = player;
             } else {
-                this._drawSpaceShip(ship, "#FF0000");
+                this._drawPlayer(player, "#FF0000");
             }
-
-            //var ship = this.gameState.players[i].spaceShip;
-            //var color = this.gameState.players[i].playerId === this.id ? "#00FFFF" : "#FF0000";
-            //this.visualizer.draw(ship.position, ship.theta, PointArrays.spaceShip, color);
         }
 
-        if (currentPlayerShip !== null) {
-            this._drawSpaceShip(currentPlayerShip, "#00FFFF");
+        if (currentPlayer !== null) {
+            this._drawPlayer(currentPlayer, "#00FFFF");
         }
     }
     
@@ -86,9 +81,10 @@ function (io, KeyHandler, Visualizer, SpaceShip, GameState, PlayerDataConverter,
             self.gameState.removeKeyFromPlayer(data.key, data.id);
         });
     }
-    Client.prototype._drawSpaceShip = function (spaceShip, color) {
+    Client.prototype._drawPlayer = function (player, color) {
+        var spaceShip = player.spaceShip;
         this.visualizer.draw(spaceShip.position, spaceShip.theta, PointArrays.spaceShip, color);
-        this.visualizer.drawText("hello", { x: spaceShip.position.x - 20, y: spaceShip.position.y - 24 }, color);
+        this.visualizer.drawText(player.playerName, { x: spaceShip.position.x - 20, y: spaceShip.position.y - 24 }, color);
     }
 
     return Client;

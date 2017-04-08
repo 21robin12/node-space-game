@@ -1,4 +1,4 @@
-﻿define(["physics/SpaceShip"], function (SpaceShip) {
+﻿define(["physics/SpaceShip", "game/Player"], function (SpaceShip, Player) {
     function PlayerDataConverter () { }
     
     // http://stackoverflow.com/questions/17466714/node-socket-io-object-trouble
@@ -38,12 +38,13 @@
             ship.velocity = data.spaceShip.velocity;
             ship.theta = data.spaceShip.theta;
             
-            var player = {
+            var player = new Player ({
                 playerId: data.playerId,
-                pressedKeys: data.pressedKeys,
                 spaceShip: ship
-            };
-            
+            });
+
+            player.pressedKeys = data.pressedKeys;
+
             players.push(player);
         }
 
