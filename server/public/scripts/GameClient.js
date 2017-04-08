@@ -51,10 +51,24 @@ function (io, KeyHandler, Visualizer, SpaceShip, GameState, PlayerDataConverter,
     
     Client.prototype._drawEverything = function () {
         this.canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+
+        var currentPlayerShip = null;
         for (var i = 0; i < this.gameState.players.length; i++) {
+            var player = this.gameState.players[i];
+            var ship = player.spaceShip;
+            if (player.playerId === this.id) {
+                currentPlayerShip = ship;
+            } else {
+                this.visualizer.draw(ship.position, ship.theta, PointArrays.spaceShip, "#FF0000");
+            }
+
             var ship = this.gameState.players[i].spaceShip;
             var color = this.gameState.players[i].playerId === this.id ? "#00FFFF" : "#FF0000";
             this.visualizer.draw(ship.position, ship.theta, PointArrays.spaceShip, color);
+        }
+
+        if (currentPlayerShip !== null) {
+            this.visualizer.draw(currentPlayerShip.position, currentPlayerShip.theta, PointArrays.spaceShip, "#00FFFF");
         }
     }
     
