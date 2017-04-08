@@ -50,6 +50,7 @@
     <Content Include="notes\goals.txt" />
     <Content Include="package.json" />
     <Content Include="public\styles.css" />
+    <Content Include="views\enterName.vash" />
     <Content Include="views\game.vash" />
   </ItemGroup>
   <ItemGroup>

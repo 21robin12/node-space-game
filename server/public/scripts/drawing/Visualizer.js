@@ -28,9 +28,19 @@
         this.canvasContext.lineTo(lastPoint.x + position.x, lastPoint.y + position.y);
         
         this.canvasContext.fillStyle = color;
+        this.canvasContext.lineWidth = 1;
         this.canvasContext.fill();
         this.canvasContext.stroke();
     }
-    
+
+    Visualizer.prototype.drawText = function (text, position, color) {
+        this.canvasContext.fillStyle = color;
+        this.canvasContext.strokeStyle = 'black';
+        this.canvasContext.lineWidth = 1;
+        this.canvasContext.font = "bold 20px Arial";
+        this.canvasContext.fillText(text, position.x, position.y);
+        this.canvasContext.strokeText(text, position.x, position.y);
+    }
+
     return Visualizer;
 });

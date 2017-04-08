@@ -68,10 +68,26 @@ function (GameServer, socketio, express, path) {
     
     // Routing
     app.get("/", function (req, res) {
-        var newPlayerId = gameServer.addNewPlayer();
-        var host = req.headers.host;
-        var model = { id: newPlayerId, width: gameWidth, height: gameHeight, domain: host };
-        res.render("game", model);
+        var playerName = req.query.playerName;
+        if (playerName) {
+            var newPlayerId = gameServer.addNewPlayer();
+            var host = req.headers.host;
+            var model = {
+                id: newPlayerId,
+                width: gameWidth,
+                height: gameHeight,
+                domain: host,
+                playerName: playerName
+            };
+
+            res.render("game", model);
+        } else {
+            res.redirect("/enter-name");
+        }
+    });
+
+    app.get("/enter-name", function (req, res) {
+        res.render("enterName");
     });
 });
 

@@ -1,3 +1,7 @@
+body, html {
+    background: rgb(245,245,245);
+}
+
 .wrapper {
     margin-left:auto;
     margin-right:auto;
@@ -12,4 +16,27 @@ canvas {
 
 .canvas-main {
     background: grey;
+}
+
+.form-wrapper {
+    margin: 0 auto;
+    padding-top: 100px;
+}
+input {
+    width: 400px;
+    padding: 12px;
+    margin: 0 auto;
+    display: block;
+    box-sizing: border-box;
+    font-size: 30px;
+    border: 1px solid black;
+}
+input[type="submit"] {
+    background: #00FFFF;
+    cap
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background: #00B6B6;
 }

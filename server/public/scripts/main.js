@@ -25,7 +25,8 @@ require(['GameClient'], function (GameClient) {
     var id = getIntValue("data-id");
     var width = getIntValue("data-width");
     var height = getIntValue("data-height");
+    var playerName = body.getAttribute("data-player-name");
 
-    var gameClient = new GameClient(id, domain, width, height);
+    var gameClient = new GameClient(id, domain, width, height, playerName);
     gameClient.start();
 });

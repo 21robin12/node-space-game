@@ -59,16 +59,16 @@ function (io, KeyHandler, Visualizer, SpaceShip, GameState, PlayerDataConverter,
             if (player.playerId === this.id) {
                 currentPlayerShip = ship;
             } else {
-                this.visualizer.draw(ship.position, ship.theta, PointArrays.spaceShip, "#FF0000");
+                this._drawSpaceShip(ship, "#FF0000");
             }
 
-            var ship = this.gameState.players[i].spaceShip;
-            var color = this.gameState.players[i].playerId === this.id ? "#00FFFF" : "#FF0000";
-            this.visualizer.draw(ship.position, ship.theta, PointArrays.spaceShip, color);
+            //var ship = this.gameState.players[i].spaceShip;
+            //var color = this.gameState.players[i].playerId === this.id ? "#00FFFF" : "#FF0000";
+            //this.visualizer.draw(ship.position, ship.theta, PointArrays.spaceShip, color);
         }
 
         if (currentPlayerShip !== null) {
-            this.visualizer.draw(currentPlayerShip.position, currentPlayerShip.theta, PointArrays.spaceShip, "#00FFFF");
+            this._drawSpaceShip(currentPlayerShip, "#00FFFF");
         }
     }
     
@@ -85,6 +85,10 @@ function (io, KeyHandler, Visualizer, SpaceShip, GameState, PlayerDataConverter,
         socket.on("GameServer key-removed", function (data) {
             self.gameState.removeKeyFromPlayer(data.key, data.id);
         });
+    }
+    Client.prototype._drawSpaceShip = function (spaceShip, color) {
+        this.visualizer.draw(spaceShip.position, spaceShip.theta, PointArrays.spaceShip, color);
+        this.visualizer.drawText("hello", { x: spaceShip.position.x - 20, y: spaceShip.position.y - 24 }, color);
     }
 
     return Client;
