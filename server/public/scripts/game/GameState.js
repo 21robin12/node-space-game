@@ -1,4 +1,4 @@
-﻿define(["physics/SpaceShip", "helpers/ArrayHelper"], function (SpaceShip, ArrayHelper) {
+﻿define(["physics/SpaceShip", "helpers/ArrayHelper", "game/Player"], function (SpaceShip, ArrayHelper, Player) {
     function GameState(width, height) {
         
         // record playerId, pressedKeys and spaceShip
@@ -33,8 +33,10 @@
     }
     
     GameState.prototype.addNewPlayer = function (newPlayerId) {
-        var ship = new SpaceShip(this.width / 2, this.height / 2);
-        this.players.push({ playerId: newPlayerId, pressedKeys: [], spaceShip: ship });
+        this.players.push(new Player({
+            playerId: newPlayerId,
+            spaceShip: new SpaceShip(this.width / 2, this.height / 2)
+        }));
     }
 
     GameState.prototype.addKeyToPlayer = function(key, playerId) {
