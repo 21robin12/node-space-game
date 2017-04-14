@@ -38,6 +38,7 @@
         this.canvasContext.strokeStyle = 'black';
         this.canvasContext.lineWidth = 1;
         this.canvasContext.font = "bold 20px Arial";
+        this.canvasContext.textAlign = "center"; 
         this.canvasContext.fillText(text, position.x, position.y);
         this.canvasContext.strokeText(text, position.x, position.y);
     }

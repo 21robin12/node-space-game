@@ -84,7 +84,7 @@ function (io, KeyHandler, Visualizer, SpaceShip, GameState, PlayerDataConverter,
     Client.prototype._drawPlayer = function (player, color) {
         var spaceShip = player.spaceShip;
         this.visualizer.draw(spaceShip.position, spaceShip.theta, PointArrays.spaceShip, color);
-        this.visualizer.drawText(player.playerName, { x: spaceShip.position.x - 20, y: spaceShip.position.y - 24 }, color);
+        this.visualizer.drawText(player.playerName, { x: spaceShip.position.x, y: spaceShip.position.y - 24 }, color);
     }
 
     return Client;
