@@ -70,7 +70,7 @@ function (GameServer, socketio, express, path) {
     app.get("/", function (req, res) {
         var playerName = req.query.playerName;
         if (playerName) {
-            var newPlayerId = gameServer.addNewPlayer();
+            var newPlayerId = gameServer.addNewPlayer(playerName);
             var host = req.headers.host;
             var model = {
                 id: newPlayerId,

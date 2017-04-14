@@ -18,6 +18,7 @@
             
             var data = {
                 playerId: player.playerId,
+                playerName: player.playerName,
                 pressedKeys: player.pressedKeys,
                 spaceShip: ship
             };
@@ -40,6 +41,7 @@
             
             var player = new Player ({
                 playerId: data.playerId,
+                playerName: data.playerName,
                 spaceShip: ship
             });
 

@@ -34,10 +34,10 @@ function (SpaceShip, events, GameState, ArrayHelper, PlayerDataConverter, Server
         }, broadcastPositionsInterval);
     }
     
-    GameServer.prototype.addNewPlayer = function () {
+    GameServer.prototype.addNewPlayer = function (playerName) {
         var newPlayerId = this._getNextId();
-        this.players.push(new ServerPlayer({ playerId: newPlayerId }));
-        this.gameState.addNewPlayer(newPlayerId);
+        this.players.push(new ServerPlayer({ playerId: newPlayerId, playerName: playerName }));
+        this.gameState.addNewPlayer(newPlayerId, playerName);
         
         return newPlayerId;
     }

@@ -32,9 +32,10 @@
         }
     }
     
-    GameState.prototype.addNewPlayer = function (newPlayerId) {
+    GameState.prototype.addNewPlayer = function (newPlayerId, newPlayerName) {
         this.players.push(new Player({
             playerId: newPlayerId,
+            playerName: newPlayerName,
             spaceShip: new SpaceShip(this.width / 2, this.height / 2)
         }));
     }
