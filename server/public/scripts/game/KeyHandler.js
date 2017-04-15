@@ -18,6 +18,10 @@
         document.onkeyup = function (e) {
             self._onKeyUp(e, self);
         }
+
+        self._registerElementAsKey("button-left", 37);
+        self._registerElementAsKey("button-forwards", 38);
+        self._registerElementAsKey("button-right", 39);
     }
     
     // **********************X
@@ -53,7 +57,26 @@
             this._emitKeyRemoved(value);
         }
     }
-    
+
+    KeyHandler.prototype._registerElementAsKey = function (buttonId, keyCode) {
+        var self = this;
+        document.getElementById(buttonId).addEventListener("touchstart", function () {
+            self._addKey(keyCode, self.pressedKeyCodes);
+        });
+
+        document.getElementById(buttonId).addEventListener("mousedown", function () {
+            self._addKey(keyCode, self.pressedKeyCodes);
+        });
+
+        document.getElementById(buttonId).addEventListener("touchend", function () {
+            self._removeKey(keyCode, self.pressedKeyCodes);
+        });
+
+        document.getElementById(buttonId).addEventListener("mouseup", function () {
+            self._removeKey(keyCode, self.pressedKeyCodes);
+        });
+    }
+
     KeyHandler.prototype._emitKeyAdded = function (keyCode) {
         var message = { id: this.clientId, key: keyCode };
         this.socket.emit('KeyHandler key-added', message);

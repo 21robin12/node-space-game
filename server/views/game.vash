@@ -8,9 +8,11 @@
     <title></title>
 </head>
 <body data-id="@model.id" data-domain="@model.domain" data-width="@model.width" data-height="@model.height" data-player-name="@model.playerName">
-    This is Client with id @model.id
     <div class="wrapper">
         <canvas id="canvas" width="@model.width" height="@model.height" class="canvas-main"></canvas>
-    </div>
+		<div class="button" id="button-left">↶</div>
+		<div class="button" id="button-forwards">↑</div>
+		<div class="button" id="button-right">↷</div>
+	</div>
 </body>
 </html>

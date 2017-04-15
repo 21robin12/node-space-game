@@ -33,10 +33,34 @@ input {
 }
 input[type="submit"] {
     background: #00FFFF;
-    cap
 }
 
 input[type="submit"]:hover {
     cursor: pointer;
     background: #00B6B6;
+}
+
+.button {
+    margin: 48px;
+    border: 1px solid black;
+    background: green;
+    width: 100px;
+    height: 100px;
+    float:left;
+    color: white;
+    font-size: 80px;
+    text-align: center;
+    font-weight: bold;
+
+      -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.button:hover {
+    cursor: pointer;
 }
